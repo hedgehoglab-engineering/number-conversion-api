@@ -1,0 +1,12 @@
+description: One or more conditions given in the request header fields evaluated to false when tested on the server.
+content:
+  application/json:
+    schema:
+      description: Precondition Failed
+      type: object
+      properties:
+        message:
+          type: string
+          example: This action is unauthorized.
+      required:
+        - message

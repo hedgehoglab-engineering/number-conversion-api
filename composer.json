@@ -1,0 +1,72 @@
+{
+    "name": "hedgehoglab-engineering/number-conversion-api",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.2",
+        "ext-gmp": "*",
+        "guzzlehttp/guzzle": "^7.7",
+        "laravel/framework": "^10.13",
+        "laravel/passport": "^11.8",
+        "laravel/tinker": "^2.8",
+        "league/flysystem-aws-s3-v3": "^3.15",
+        "netsells/hash-model-ids": "^1.1",
+        "netsells/laravel-mutex-migrations": "^1.1",
+        "netsells/laravel-resourceful": "^1.2"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.13",
+        "fakerphp/faker": "^1.22",
+        "laravel/telescope": "^4.14",
+        "mockery/mockery": "^1.6",
+        "netsells/code-standards-laravel": "^1.1",
+        "nunomaduro/collision": "^7.5",
+        "phpunit/phpunit": "^10.2",
+        "spatie/laravel-ignition": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "spec-bundle": "cd ./spec && make bundle",
+        "spec-lint": "cd ./spec && make lint",
+        "phpstan": "vendor/bin/phpstan",
+        "format": "vendor/bin/php-cs-fixer fix",
+        "test": "vendor/bin/phpunit",
+        "ide-helper": [
+            "@php artisan ide-helper:generate -H -M",
+            "@php artisan ide-helper:meta",
+            "@php artisan ide-helper:models -W"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+                "laravel/telescope"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

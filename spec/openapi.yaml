@@ -1,0 +1,61 @@
+openapi: 3.0.0
+
+info:
+  title: number-conversion-api
+  version: 1.0.0
+  description: |-
+    RESTful API specification for number-conversion-api.
+
+    All endpoints are secured (unless indicated otherwise) and need a valid Bearer token passed in the Authorization header of the request.
+    Some endpoints are protected using a ClientCredentials token, while majority are protected using a PasswordGrant token.
+
+    Response model conventions:
+    - Fields marked as "required" will have a value
+    - Fields not marked as "required" can have a value, but may also be null, or may not be included in the response at all
+    - Fields of type array may be empty (array with no items) unless validation indicates otherwise, however they are always "required"
+
+    Patch update conventions:
+    - Send only the fields you want to update with their new values
+    - Fields marked as "required" cannot be unset/set to null, however they can be omitted from the request body if they should be left unchanged
+    - The same rules also apply to fields inside nested objects
+
+    Get collection conventions:
+    - All paginated lists accept page and per_page query string parameters
+
+    Other notes:
+    - Resource ID fields should not be user visible as they are generally opaque / random looking strings.
+    - For sub-resources of the User resource, 'me' alias can be used instead of the user ID to work with currently authenticated user.
+    - Expect 401 response in case of authentication problems, e.g. expired or invalid tokens.
+    - Expect 403 response in case of authorisation problems, e.g. user doesn't have enough privileges to access a given resource.
+  license:
+    name: Private
+    url: https://example.com
+
+servers:
+  - url: "http://localhost:8080"
+    description: local
+
+security:
+  - ClientCredentials: []
+
+paths:
+  /api/v1/users/{user}:
+    $ref: ./paths/users/User.yaml
+
+components:
+  securitySchemes:
+    ClientCredentials:
+      type: oauth2
+      description: See https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/ for request and response details.
+      flows:
+        clientCredentials:
+          tokenUrl: oauth/token
+          scopes: {}
+
+    PasswordGrant:
+      type: oauth2
+      description: See https://www.oauth.com/oauth2-servers/access-tokens/password-grant/ for request and response details
+      flows:
+        password:
+          tokenUrl: oauth/token
+          scopes: {}

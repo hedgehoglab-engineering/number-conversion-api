@@ -1,0 +1,12 @@
+description: The request has not been applied because it lacks valid authentication credentials for the target resource.
+content:
+  application/json:
+    schema:
+      description: Authentication failed
+      type: object
+      properties:
+        message:
+          type: string
+          example: Unauthenticated.
+      required:
+        - message

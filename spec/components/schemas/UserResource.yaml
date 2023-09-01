@@ -1,0 +1,20 @@
+title: User
+type: object
+properties:
+  id:
+    $ref: ./HashedId.yaml
+  first_name:
+    $ref: ./FirstName.yaml
+  last_name:
+    $ref: ./LastName.yaml
+  email:
+    $ref: ./Email.yaml
+  administrator:
+    title: Administrator
+    type: boolean
+required:
+  - id
+  - first_name
+  - last_name
+  - email
+  - administrator

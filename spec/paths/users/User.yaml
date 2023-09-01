@@ -1,0 +1,23 @@
+parameters:
+  - $ref: ./../../components/parameters/path/User.yaml
+
+get:
+  summary: Get the user
+  description: Get data about the user
+  operationId: get.api.v1.users.user.show
+  tags:
+    - Accounts
+  security:
+    - PasswordGrant: []
+  responses:
+    '200':
+      description: The request has succeeded.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: ./../../components/schemas/UserResource.yaml
+            required:
+              - data

@@ -1,0 +1,6 @@
+name: user
+in: path
+description: The hashed ID of the required user model, or a literal 'me' string that uses the authenticated User
+required: true
+schema:
+  $ref: ./../../../components/schemas/HashedId.yaml

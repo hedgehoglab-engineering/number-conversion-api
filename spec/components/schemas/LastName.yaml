@@ -1,0 +1,4 @@
+title: LastName
+description: The user's last name
+type: string
+example: Smith

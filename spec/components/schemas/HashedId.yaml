@@ -1,0 +1,4 @@
+title: hashed_id
+description: Resource identifier encoded as a short opaque string
+type: string
+example: 3kTMd
