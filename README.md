@@ -13,8 +13,8 @@ After our discussions with the client, we have discovered that the solution will
 - initially support conversions from integers to roman numerals
 - contain endpoints allowing to perform the conversions
 - contain endpoints allowing to fetch conversions based on the following criteria:
-  - performed most frequently
-  - performed most recently
+  - most frequently converted
+  - most recently converted
 
 In place of talking to the client you will have to make some reasonable assumptions about your implementation.
 
