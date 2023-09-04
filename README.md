@@ -23,12 +23,11 @@ Take this opportunity to demonstrate your knowledge and don't be afraid of imple
 
 - Use of MVC components (View in this instance can be, for example, an Eloquent API Resource)
 - Use of Laravel features such as Eloquent ORM, Form Requests, Validation, Routes
-- An implementation of the supplied interface
 - The supplied PHPUnit test passing
+- Consideration given to the support of other numerical systems in the future
+- Following the conventions you identify in the existing codebase
 - Clean, testable, object oriented code, following the included code standards
 - Use of modern PHP features where appropriate
-- Following the conventions you identify in the existing codebase
-- Consideration given to the support of other numerical systems in the future
 
 
 ## Submission Instructions
